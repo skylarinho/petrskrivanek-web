@@ -50,6 +50,8 @@
   .nav-links a:hover { color:var(--white); }
   .nav-cta { background:var(--green); color:#fff; padding:8px 20px; border-radius:100px; font-size:13px; font-weight:600; text-decoration:none; transition:background .2s; }
   .nav-cta:hover { background:var(--green2); }
+  .nav-lang { border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.6); padding:7px 14px; border-radius:100px; font-size:12px; font-weight:600; text-decoration:none; transition:border-color .2s,color .2s; letter-spacing:.05em; }
+  .nav-lang:hover { border-color:rgba(255,255,255,.5); color:#fff; }
 
   /* ─── HERO ─── */
   .hero {
@@ -97,6 +99,11 @@
   .btn-green:hover { background:var(--green2); transform:translateY(-2px); }
   .btn-ghost { border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.8); padding:13px 28px; border-radius:100px; font-size:14px; text-decoration:none; font-weight:400; transition:border-color .2s,color .2s; }
   .btn-ghost:hover { border-color:rgba(255,255,255,.5); color:#fff; }
+
+  .hero-social { display:flex; align-items:center; gap:20px; margin-top:24px; flex-wrap:wrap; }
+  .hsoc-link { display:inline-flex; align-items:center; gap:7px; color:rgba(255,255,255,.35); text-decoration:none; font-size:12.5px; font-weight:500; transition:color .2s; }
+  .hsoc-link:hover { color:rgba(255,255,255,.8); }
+  .hsoc-link svg { flex-shrink:0; }
 
   .hero-photo { display:flex; flex-direction:column; align-items:center; gap:16px; position:relative; }
   .photo-wrap {
@@ -316,6 +323,7 @@
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <a href="#cta" class="nav-cta">30 min zdarma ☎️</a>
+    <a href="en.html" class="nav-lang">EN</a>
   </div>
 </nav>
 
@@ -329,6 +337,20 @@
       <div class="hero-actions">
         <a href="#cta" class="btn-green">Domluvte si call zdarma</a>
         <a href="#projekty" class="btn-ghost">Moje práce</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.instagram.com/skylarinho" target="_blank" class="hsoc-link" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          @skylarinho
+        </a>
+        <a href="https://strava.app.link/VUYdEVovd1b" target="_blank" class="hsoc-link" title="Strava">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7 13.828h4.169"/></svg>
+          Strava
+        </a>
+        <a href="https://www.linkedin.com/in/petrskrivanek" target="_blank" class="hsoc-link" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
       </div>
     </div>
     <div class="hero-photo">
@@ -358,7 +380,7 @@
   <div class="sec-in about-grid">
     <div class="about-text">
       <div class="eye">O mně</div>
-      <h2>Technologie ve službách <em>dobrých věcí</em></h2>
+      <h2>Pomůžu vám, abyste <em>byli vidět</em></h2>
       <p>Pohybuji se ve světě digitálního marketingu a baví mě zjednodušovat procesy tak, aby opravdu fungovaly.</p>
       <p>Nejsem ten typ, co by vás zahltil odbornými termíny. Místo toho vám normálně lidsky vysvětlím, jak vám moderní technologie můžou pomoct dosáhnout toho, co potřebujete.</p>
       <p>Nejvíc mě to táhne k neziskovkám a jednotlivcům, kterým chci ukázat, že i s omezeným rozpočtem se dají dělat velké věci. Baví mě nacházet praktická řešení, která vám ušetří čas i peníze.</p>
@@ -520,10 +542,10 @@
         <div class="pcard-strip"><span class="ico">💜</span><span class="lbl">Velvet Smile</span><span class="pbadge">Neziskovka</span></div>
         <div class="pcard-body">
           <div class="pcard-client">Velvet Smile</div>
-          <h3>Kompletní výroba webu</h3>
-          <p>Wireframe, koordinace výroby a propojení s darujme.cz. Web, který mění návštěvníky v dárce.</p>
+          <h3>Web, který pomáhá s úsměvem</h3>
+          <p>Výroba a správa webu pro organizaci, která pomáhá lidem, kteří to potřebují. Wireframe, koordinace výroby a průběžná správa.</p>
         </div>
-        <div class="pcard-foot"><span class="ptag">Wireframe</span><span class="ptag">WordPress</span><span class="ptag">darujme.cz</span></div>
+        <div class="pcard-foot"><span class="ptag">Wireframe</span><span class="ptag">WordPress</span><span class="ptag">Správa webu</span></div>
       </a>
 
       <!-- Otevřená zahrada -->
@@ -614,7 +636,18 @@
         <div class="pcard-foot"><span class="ptag">GA4</span><span class="ptag">GTM</span></div>
       </a>
 
-      <!-- Sonet Studio -->
+      <!-- Krizový mluvčí Zátor -->
+      <a href="#" class="pcard">
+        <div class="pcard-strip"><span class="ico">🚨</span><span class="lbl">Zátor — povodně 2024</span><span class="pbadge">Krizová komunikace</span></div>
+        <div class="pcard-body">
+          <div class="pcard-client">Obec Zátor</div>
+          <h3>Krizový tiskový mluvčí</h3>
+          <p>Během povodní v září 2024 jsem zastával všechny komunikační role najednou — správa sociálních sítí, PR, komunikace s novináři, fotodokumentace, fundraising i event management. Propojil jsem vytrvalost běžce s organizačními zkušenostmi z práce v nadaci.</p>
+        </div>
+        <div class="pcard-foot"><span class="ptag">PR</span><span class="ptag">Sociální sítě</span><span class="ptag">Fundraising</span><span class="ptag">Fotografie</span><span class="ptag">Event management</span></div>
+      </a>
+
+
       <a href="https://www.sonetstudio.cz" target="_blank" class="pcard">
         <div class="pcard-strip"><span class="ico">🏢</span><span class="lbl">Sonet Studio</span></div>
         <div class="pcard-body">

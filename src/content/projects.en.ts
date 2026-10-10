@@ -20,10 +20,10 @@ export const projectsEn: Record<string, { title: string; summary: string; tags?:
     summary:
       'Coordinating the website build, wireframes and UX consultation, event tracking with reporting, and managing and developing the Salesforce CRM.',
   },
-  lipka: { title: '', summary: 'Website consultation, analytics and reporting' },
+  lipka: { title: '', summary: 'Website consultation, analytics and reporting, technical development of email marketing' },
   'evropsky-strom-roku': {
     title: '',
-    summary: 'Coordination of the international competition for Nadace Partnerství',
+    summary: 'Coordination and development of a Nadace Partnerství project',
   },
   bevlava: { title: '', summary: 'Analytics, reporting and UX consultation for a hiking trails website' },
   'snt-group': { title: '', summary: 'Complete analytics setup, advertising integration and reporting' },

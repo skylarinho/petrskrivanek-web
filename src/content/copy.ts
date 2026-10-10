@@ -140,7 +140,7 @@ const cs: Copy = {
       },
     ],
     alsoLabel: 'Dál umím:',
-    also: 'online reklamu včetně Google Ad Grants a Skliku a tvorbu webů po jednotlivých krocích. Nejsem designér, ale baví mě UX a UI a umím poradit, co má web dělat. Malým neziskovkám ho postavím s pomocí AI.',
+    also: 'online reklamu včetně Google Ad Grants a Skliku. Provedu vás tvorbou webu po jednotlivých důležitých krocích, poradím s UX a doporučím nástroje s ohledem na cenu.',
   },
   projects: {
     h2: 'Projekty',
@@ -270,7 +270,7 @@ const en: Copy = {
       },
     ],
     alsoLabel: 'I also do:',
-    also: 'online advertising including Google Ad Grants and Sklik, and building websites step by step. I’m not a designer, but I enjoy UX and UI and I can advise what a website should do. For small nonprofits I build the site myself with the help of AI.',
+    also: 'online advertising including Google Ad Grants and Sklik. I’ll guide you through building a website, one important step at a time, advise on UX and recommend tools with the price in mind.',
   },
   projects: {
     h2: 'Projects',

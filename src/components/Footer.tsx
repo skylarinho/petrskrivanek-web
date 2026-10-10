@@ -1,4 +1,4 @@
-import logo from '@/assets/logo-skrivan.png'
+import logo from '@/assets/logo-skrivan.webp'
 import { useLang } from '@/i18n'
 
 export default function Footer() {

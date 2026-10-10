@@ -1,6 +1,6 @@
-import { useLayoutEffect, useRef } from 'react'
+import type { CSSProperties } from 'react'
 import { useLang } from '@/i18n'
-import { ROUTE_PATH } from '@/content/routePath'
+import { ROUTE_LENGTH, ROUTE_PATH } from '@/content/routePath'
 
 // Zpoždění naskočení bodů (s) při kreslení trasy
 const POP_DELAYS = [0.9, 1.35, 1.9, 2.4]
@@ -56,7 +56,6 @@ function HeroArt() {
 
 export default function Hero() {
   const { t, fmt } = useLang()
-  const routeRef = useRef<SVGPathElement>(null)
 
   const CHECKPOINTS = [
     { href: '#s-crm', label: t.hero.checkpoints.crm, x: 96, y: 176, tx: 112, ty: 181 },
@@ -64,12 +63,6 @@ export default function Hero() {
     { href: '#s-data', label: t.hero.checkpoints.data, x: 318, y: 138, tx: 302, ty: 143, anchor: 'end' as const },
     { href: '#s-ai', label: t.hero.checkpoints.ai, x: 236, y: 286, tx: 236, ty: 264, anchor: 'middle' as const },
   ]
-
-  // Délka trasy pro animaci kreslení (stroke-dashoffset)
-  useLayoutEffect(() => {
-    const r = routeRef.current
-    if (r) r.style.setProperty('--len', String(Math.ceil(r.getTotalLength())))
-  }, [])
 
   return (
     <section className="hero" id="hero">
@@ -99,7 +92,7 @@ export default function Hero() {
               <ellipse cx="200" cy="175" rx="30" ry="16" />
             </g>
             <HeroArt />
-            <path ref={routeRef} className="route" id="route" d={ROUTE_PATH} />
+            <path className="route" id="route" d={ROUTE_PATH} style={{ '--len': ROUTE_LENGTH } as CSSProperties} />
             <g className="sf">
               <circle cx="36" cy="282" r="5" fill="#1D332E" />
               <text x="22" y="308">

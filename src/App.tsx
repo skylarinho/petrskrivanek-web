@@ -8,11 +8,10 @@ import Projects from '@/components/Projects'
 import Run from '@/components/Run'
 import Services from '@/components/Services'
 import Steps from '@/components/Steps'
-import { LangProvider, langFromPath } from '@/i18n'
+import { LangProvider } from '@/i18n'
+import type { Lang } from '@/content/copy'
 
-export default function App() {
-  const lang = langFromPath(window.location.pathname)
-
+export default function App({ lang }: { lang: Lang }) {
   return (
     <LangProvider lang={lang}>
       <Header />

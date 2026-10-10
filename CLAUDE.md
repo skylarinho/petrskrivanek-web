@@ -61,3 +61,13 @@ Vzhled komponent vždy přebij našimi tokeny, vlastní styly Arcu nepoužívej.
 - Kontrola na 390 px a 1440 px (Playwright screenshot), žádný horizontální scroll.
 - Viditelný focus (3px okrový outline), kontrast AA, alt texty, tlačítka filtru s `aria-pressed`.
 - Lighthouse mobil ≥ 95 ve všech kategoriích. Fotky ve WebP/AVIF se zadanými rozměry.
+
+
+## Stav implementace (10/2026)
+Odchylky od textu výše, které jsou odsouhlasené:
+- **Arc Library se nepoužívá.** Filtr projektů, mobilní menu (nativní `<dialog>`) a kopírování e-mailu jsou vlastní komponenty. `sparkline` odpadá, Strava API je odpojené a kilometry se mění ručně v `src/content/site.ts`.
+- **Předrenderování** řeší vlastní `scripts/prerender.mjs` (bez `vite-react-ssg`), vygeneruje `/` (cs) a `/en/` (en).
+- **Dvojjazyčnost:** texty v `src/content/copy.ts`, `cz()` jen pro češtinu.
+- **Písma** jsou hostovaná lokálně (`@fontsource`), ne z Google Fonts.
+- **Případové studie** zatím nejsou postavené, `SHOW_CASE_STUDIES = false` je jen přepínač v datech.
+- Tailwind 4: tokeny jsou v `@theme` v `src/index.css`, vzhled komponent v `src/site.css` (převzato z mockupu).

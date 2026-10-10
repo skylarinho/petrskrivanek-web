@@ -1,0 +1,9 @@
+{
+  // Statický web: Cloudflare nahraje jen složku dist (výstup `npm run build`).
+  "name": "petrskrivanek-web",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

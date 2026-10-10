@@ -1,0 +1,210 @@
+/* Mockup CSS převzaté 1:1, proměnné odkazují na tokeny z @theme v index.css */
+:root{
+  --bg:var(--color-bg);--surface:var(--color-surface);--ink:var(--color-ink);--ink-2:var(--color-ink-2);
+  --line:var(--color-line);--ochre:var(--color-ochre);--ochre-text:var(--color-ochre-text);--leaf:var(--color-leaf);--sky:var(--color-sky);
+  --display:var(--font-display);--body:var(--font-body);--r-s:var(--radius-block);--r-l:var(--radius-card);
+}
+
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em}
+h2{font-size:clamp(44px,9vw,76px)}
+h3{font-size:30px;line-height:1}
+h1,h2,h3{text-wrap:balance}
+p,dd,li{text-wrap:pretty}
+p{max-width:62ch}
+.lead{font-size:19px;color:var(--ink-2)}
+
+/* ---------- Ukázková / chybějící data ---------- */
+.todo{outline:2px dashed var(--ochre);outline-offset:2px;background:repeating-linear-gradient(135deg,rgba(199,137,58,.10) 0 8px,transparent 8px 16px);border-radius:4px}
+.todo-tag{display:inline-block;white-space:nowrap;font:700 12px/1 var(--body);background:var(--ochre);color:#fff;padding:4px 7px;border-radius:99px;vertical-align:middle}
+
+/* ---------- Tlačítka ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:99px;font:700 17px/1 var(--body);text-decoration:none;border:2px solid var(--ink);transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-sm{min-height:40px;padding:0 16px;font-size:15px}
+
+/* ---------- Hlavička ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(238,240,234,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent}
+.top.scrolled{border-color:var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;white-space:nowrap;font-size:16px}
+.top .btn{white-space:nowrap}
+.brand img{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:cover}
+.nav{display:none;gap:28px}
+.nav a{text-decoration:none;font-weight:500;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+
+/* ---------- Hero ---------- */
+.hero{padding:28px 0 56px}
+.hero .wrap{display:grid;gap:28px}
+.hero h1{font-size:clamp(58px,15.5vw,112px);line-height:.88;max-width:11ch}
+.hero .lead{margin-top:18px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero .meta{margin-top:18px;font-size:15px;color:var(--ink-2)}
+.map{position:relative;background:var(--surface);border-radius:var(--r-l);padding:10px;border:1px solid var(--line)}
+.map svg{width:100%;height:auto;display:block}
+.map figcaption{font-size:14px;color:var(--ink-2);padding:6px 8px 4px}
+.contour{fill:none;stroke:#E2E7DF;stroke-width:1}
+.route{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.cp circle.o{fill:var(--ochre)}
+.cp circle.i{fill:#fff}
+.cp text,.sf text{font:700 13px var(--body);fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+.sf text{font-weight:500;fill:var(--ink-2)}
+.cp a{text-decoration:none}
+.cp a:hover text{fill:var(--ochre-text)}
+@media (prefers-reduced-motion:no-preference){
+  .route{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.4s cubic-bezier(.45,.05,.3,1) .3s forwards}
+  .cp{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .35s ease forwards}
+  .cp:nth-of-type(1){animation-delay:.9s}.cp:nth-of-type(2){animation-delay:1.35s}
+  .cp:nth-of-type(3){animation-delay:1.9s}.cp:nth-of-type(4){animation-delay:2.4s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+}
+
+/* ---------- Sekce ---------- */
+section{padding:72px 0}
+.sec-head{display:grid;gap:14px;margin-bottom:36px}
+
+/* Co dělám – trasa */
+.services{background:var(--ink);color:#fff}
+.services .lead{color:#C9D6D0}
+.stops{list-style:none;padding:0;position:relative;display:grid;gap:0}
+.stops::before{content:"";position:absolute;left:13px;top:16px;bottom:16px;width:3px;background:repeating-linear-gradient(to bottom,#fff 0 10px,transparent 10px 16px);opacity:.35}
+.stop{position:relative;padding:0 0 30px 52px}
+.stop .dot{position:absolute;left:3px;top:4px;width:23px;height:23px;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 6px var(--ink)}
+.stop .dot::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--ink)}
+.stop h3{font-size:34px;color:#fff}
+.stop p{color:#D5DFDA;margin-top:8px}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding:0;list-style:none}
+.tools li{font-size:14px;font-weight:500;padding:4px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.28);color:#fff}
+.also{margin-top:8px;padding:18px 20px;border-radius:var(--r-s);background:rgba(255,255,255,.06);color:#D5DFDA;font-size:16px}
+.also strong{color:#fff}
+
+/* Projekty – případové studie */
+.cases{display:grid;gap:18px}
+.case{background:var(--surface);border-radius:var(--r-l);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.case .shot{aspect-ratio:16/10;display:grid;place-items:center;color:var(--ochre-text);font-weight:700;font-size:15px;text-align:center;padding:20px}
+.case .body{padding:22px 22px 24px;display:grid;gap:10px;align-content:start}
+.case .client{font-weight:700;color:var(--ink-2);font-size:15px}
+.case .client span{font-weight:500;background:var(--leaf);color:var(--ink);padding:2px 8px;border-radius:99px;margin-left:6px;font-size:13px}
+.case h3{font-size:36px}
+.case .tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;list-style:none}
+.case .tags li{font-size:13px;font-weight:500;padding:3px 9px;border-radius:99px;background:var(--bg)}
+.case .result{font-size:15px;padding:8px 10px}
+.case .more{font-weight:700;text-decoration-thickness:2px;text-underline-offset:4px;margin-top:4px}
+.case-flood .shot{background:var(--ink);color:#fff;place-items:end start;text-align:left;padding:22px}
+.case-flood .shot b{font-family:var(--display);font-size:64px;line-height:.85;font-weight:800}
+.case-flood .shot small{display:block;font-size:15px;font-weight:500;color:#C9D6D0;margin-top:8px}
+
+/* Další projekty – filtr + seznam */
+.more-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin:64px 0 18px}
+.more-head h3{font-size:40px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px;scrollbar-width:none;margin:0 calc(var(--gut)*-1);padding:2px var(--gut)}
+.chips button{flex:none;min-height:40px;padding:0 16px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:500 15px var(--body);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.plist{list-style:none;padding:0;border-top:1.5px solid var(--ink)}
+.plist li{border-bottom:1px solid var(--line)}
+.plist a{display:grid;grid-template-columns:1fr;gap:3px;padding:16px 2px;text-decoration:none}
+.plist .n{font-weight:700;font-size:18px}
+.plist .n em{font-style:normal;font-weight:500;font-size:13px;background:var(--leaf);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px}
+.plist .d{grid-column:1;color:var(--ink-2);font-size:15px}
+.plist .u{font-size:14px;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.plist a:hover .n{color:var(--ochre-text)}
+.plist li[hidden]{display:none}
+.plist .n em.was{background:transparent;color:var(--ink-2);padding:0}
+.chips .c{opacity:.6;font-size:13px;margin-left:2px}
+.showall{margin-top:22px}
+.showall[hidden]{display:none}
+.super{margin-top:28px;border-left:4px solid var(--ochre);padding:4px 0 4px 18px}
+.super h3{font-size:30px}
+.super p{margin-top:6px;color:var(--ink-2)}
+.cal{margin-top:28px;background:#fff;border-radius:var(--r-l);overflow:hidden;min-height:700px}
+.calendly-inline-widget{min-width:280px;height:700px}
+
+/* Běh */
+.run{background:var(--leaf)}
+.run .wrap{display:grid;gap:32px;align-items:center}
+.bib{position:relative;background:#fff;border-radius:10px;padding:34px 26px 26px;max-width:420px;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(29,51,46,.45);transform:rotate(-2deg)}
+.bib::before,.bib::after{content:"";position:absolute;top:12px;width:10px;height:10px;border-radius:50%;background:var(--leaf);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.bib::before{left:14px}.bib::after{right:14px}
+.bib .pins-b::before,.bib .pins-b::after{content:"";position:absolute;bottom:12px;width:10px;height:10px;border-radius:50%;background:var(--leaf);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.bib .pins-b::before{left:14px}.bib .pins-b::after{right:14px}
+.bib .ev{font-weight:700;font-size:15px;color:var(--ochre-text);text-align:center}
+.bib .num{font-family:var(--display);font-weight:800;font-size:clamp(88px,27vw,128px);line-height:.85;text-align:center;letter-spacing:-.01em;margin:6px 0 4px}
+.bib .cap{text-align:center;font-weight:500}
+.run .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.strava{margin-top:26px;background:rgba(255,255,255,.7);border-radius:var(--r-s);padding:14px 16px}
+.strava .h{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:700}
+.strava svg{width:100%;height:56px;margin-top:8px}
+
+/* O mně */
+.about .wrap{display:grid;gap:32px}
+.about .photo{border-radius:var(--r-l);overflow:hidden;aspect-ratio:1;max-width:420px;background:#ddd}
+.about .photo img{width:100%;height:100%;object-fit:cover}
+.about p+p{margin-top:14px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-top:28px;padding:0}
+.facts div{border-top:1.5px solid var(--ink);padding-top:10px}
+.facts dt{font-family:var(--display);font-weight:800;font-size:44px;line-height:1}
+.facts dd{margin:4px 0 0;font-size:15px;color:var(--ink-2)}
+
+/* Spolupráce */
+.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-s);padding:20px 20px 20px 72px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:14px;font-family:var(--display);font-weight:800;font-size:46px;line-height:1;color:var(--ochre)}
+.steps h3{font-size:28px}
+.steps p{color:var(--ink-2);margin-top:4px;font-size:16px}
+
+/* Kontakt */
+.contact{background:var(--ink);color:#fff}
+.contact .lead{color:#C9D6D0}
+.contact .btn-primary{background:#fff;color:var(--ink);border-color:#fff}
+.contact .btn-ghost{color:#fff;border-color:rgba(255,255,255,.5)}
+.contact .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.contact .ways{margin-top:36px;display:grid;gap:4px;font-size:16px;color:#C9D6D0}
+.contact .ways a{color:#fff}
+footer{background:var(--ink);color:#93A69E;font-size:14px;padding:24px 0 96px;border-top:1px solid rgba(255,255,255,.1)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+/* Mobilní lišta s CTA */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--ink);color:#fff;border-radius:99px;padding:8px 8px 8px 20px;box-shadow:0 10px 30px -10px rgba(0,0,0,.45);transform:translateY(140%);transition:transform .3s ease}
+.dock.on{transform:none}
+.dock span{font-size:14px;font-weight:500}
+.dock .btn{background:#fff;color:var(--ink);border-color:#fff;min-height:44px}
+
+/* ---------- Desktop ---------- */
+@media (min-width:860px){
+  :root{--gut:40px}
+  body{font-size:18px}
+  .nav{display:flex}
+  .hero{padding:56px 0 96px}
+  .hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center;gap:56px}
+  .hero h1{max-width:none;font-size:clamp(76px,6.4vw,92px)}
+  section{padding:112px 0}
+  .sec-head{grid-template-columns:1fr 1fr;align-items:end;gap:40px;margin-bottom:56px}
+  .stops{grid-template-columns:repeat(4,1fr);gap:28px}
+  .stops::before{left:16px;right:16px;top:14px;bottom:auto;width:auto;height:3px;background:repeating-linear-gradient(to right,#fff 0 10px,transparent 10px 16px)}
+  .stop{padding:52px 0 0}
+  .stop .dot{left:0;top:3px}
+  .also{margin-top:36px}
+  .cases{grid-template-columns:repeat(6,1fr);gap:22px}
+  .case{grid-column:span 3}
+  .case.feat{grid-column:span 6;flex-direction:row}
+  .case.feat .shot{flex:1.2;aspect-ratio:auto;min-height:380px}
+  .case.feat .body{flex:1;padding:36px;align-content:center}
+  .case.feat h3{font-size:48px}
+  .plist a{grid-template-columns:260px 1fr auto;padding:18px 4px}
+  .plist .d{grid-column:2;grid-row:1;align-self:center}
+  .plist .u{grid-column:3;grid-row:1;align-self:center}
+  .chips{margin:0;padding:2px}
+  .run .wrap{grid-template-columns:.9fr 1.1fr;gap:72px}
+  .bib{justify-self:center;width:100%}
+  .about .wrap{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .dock{display:none}
+  footer{padding-bottom:24px}
+}

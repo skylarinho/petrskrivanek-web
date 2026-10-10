@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+@theme {
+  /* Barvy */
+  --color-bg: #EEF0EA;          /* Ranní pole */
+  --color-surface: #FFFFFF;
+  --color-ink: #1D332E;         /* Smrk */
+  --color-ink-2: #4A5C55;       /* Mech */
+  --color-line: #C9D1C6;
+  --color-ochre: #C7893A;       /* Skřivan – jen grafika */
+  --color-ochre-text: #8A5419;  /* Skřivan pro text (AA) */
+  --color-leaf: #D7E6C3;        /* Sazenice */
+  --color-sky: #A9CEDA;         /* Oko skřivana */
+
+  /* Písma */
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Zaoblení */
+  --radius-pill: 99px;
+  --radius-card: 18px;
+  --radius-block: 6px;
+
+  /* Breakpoint desktopu */
+  --breakpoint-md: 860px;
+}
+
+:root {
+  --max: 1120px;
+  --gut: 20px;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (min-width: 860px) {
+  :root { --gut: 40px; }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font: 400 17px/1.55 var(--font-body);
+    font-feature-settings: "kern", "liga";
+  }
+  @media (min-width: 860px) {
+    body { font-size: 18px; }
+  }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+  p, dd, li { text-wrap: pretty; }
+  :focus-visible {
+    outline: 3px solid var(--color-ochre);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gut); }
+  /* Chybějící data: viditelný placeholder */
+  .todo {
+    outline: 2px dashed var(--color-ochre);
+    outline-offset: 2px;
+    background: repeating-linear-gradient(135deg, rgb(199 137 58 / 0.10) 0 8px, transparent 8px 16px);
+    border-radius: 4px;
+  }
+  .todo-tag {
+    display: inline-block;
+    white-space: nowrap;
+    font: 700 12px/1 var(--font-body);
+    background: var(--color-ochre);
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: var(--radius-pill);
+    vertical-align: middle;
+  }
+}

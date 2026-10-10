@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import portret from '@/assets/portret-petr.jpeg'
+import logo from '@/assets/logo-skrivan.png'
 import { useLang } from '@/i18n'
 
 export default function Header() {
@@ -28,7 +28,7 @@ export default function Header() {
     <header className={`top${scrolled ? ' scrolled' : ''}`} id="top">
       <div className="wrap">
         <a className="brand" href="#hero">
-          <img src={portret} alt="" width={40} height={40} />
+          <img src={logo} alt="" width={40} height={40} />
           Petr Skřivánek
         </a>
         <nav className="nav" aria-label={t.nav.mainLabel}>
@@ -37,9 +37,6 @@ export default function Header() {
               {n.label}
             </a>
           ))}
-          <a href={t.nav.switchTo.href} hrefLang={t.nav.switchTo.label.toLowerCase()}>
-            {t.nav.switchTo.label}
-          </a>
         </nav>
         <div className="top-actions">
           <a className="btn btn-primary btn-sm top-cta" href="#rezervace">
@@ -74,12 +71,12 @@ export default function Header() {
                 {n.label}
               </a>
             ))}
-            <a href={t.nav.switchTo.href} hrefLang={t.nav.switchTo.label.toLowerCase()}>
-              {t.nav.switchTo.label}
-            </a>
           </nav>
           <a className="btn btn-primary" href="#rezervace" onClick={closeMenu}>
             {t.nav.book}
+          </a>
+          <a className="lang-link" href={t.nav.switchTo.href} hrefLang={t.nav.switchTo.label === 'English' ? 'en' : 'cs'}>
+            {t.nav.switchTo.label}
           </a>
         </div>
       </dialog>

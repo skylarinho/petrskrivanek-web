@@ -1,3 +1,7 @@
+import velvetSmile from '@/assets/projects/velvet-smile.webp'
+import otevrenaZahrada from '@/assets/projects/otevrena-zahrada.webp'
+import nadacePartnerstvi from '@/assets/projects/nadace-partnerstvi.webp'
+
 /**
  * Všechny projekty na webu. Nový klient se přidává jen sem.
  * Texty se na výstupu prohánějí přes `cz()`, tady zůstávají čisté.
@@ -54,7 +58,7 @@ export const projects: Project[] = [
     url: 'https://velvetsmile.com',
     featured: true,
     order: 1,
-    todo: true, // chybí screenshot
+    screenshot: velvetSmile,
   },
   {
     slug: 'otevrena-zahrada',
@@ -67,7 +71,7 @@ export const projects: Project[] = [
     url: 'https://otevrena-zahrada.cz',
     featured: true,
     order: 2,
-    todo: true, // chybí screenshot
+    screenshot: otevrenaZahrada,
   },
   {
     slug: 'nadace-partnerstvi',
@@ -81,7 +85,7 @@ export const projects: Project[] = [
     url: 'https://nadacepartnerstvi.cz',
     featured: true,
     order: 3,
-    todo: true, // chybí screenshot nového webu
+    screenshot: nadacePartnerstvi,
   },
 
   // ---------- Další spolupráce ----------
@@ -144,8 +148,7 @@ export const projects: Project[] = [
     filters: ['mer'],
     url: 'https://smaltovanenadobibelis.cz',
     featured: false,
-    order: 5,
-    todo: true, // ověřit URL
+    order: 6,
   },
   {
     slug: 'ck-katu',
@@ -157,7 +160,7 @@ export const projects: Project[] = [
     filters: ['mer'],
     url: 'https://www.katu.cz',
     featured: false,
-    order: 6,
+    order: 7,
   },
   {
     slug: 'hotel-dvorana',
@@ -169,7 +172,7 @@ export const projects: Project[] = [
     filters: ['mer'],
     url: 'https://hoteldvorana.cz',
     featured: false,
-    order: 7,
+    order: 8,
   },
   {
     slug: 'ondrasovka',
@@ -181,7 +184,7 @@ export const projects: Project[] = [
     filters: ['mer'],
     url: 'https://ondrasovka.cz',
     featured: false,
-    order: 8,
+    order: 5,
   },
   {
     slug: 'novy-amos',

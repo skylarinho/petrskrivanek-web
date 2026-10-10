@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ExtLink from '@/components/ExtLink'
 import { useLang } from '@/i18n'
 import { localizeProject } from '@/content/projects.en'
 import {
@@ -36,7 +37,7 @@ export default function Projects() {
             return (
               <article className={`case${i === 0 ? ' feat' : ''}`} key={proj.slug}>
                 {proj.screenshot ? (
-                  <img className="shot" src={proj.screenshot} alt="" loading="lazy" />
+                  <img className="shot" src={proj.screenshot} alt={`${proj.client} – ${displayUrl(proj.url)}`} width={1600} height={834} loading="lazy" />
                 ) : (
                   <div className="shot todo">
                     {displayUrl(proj.url)}
@@ -56,9 +57,9 @@ export default function Projects() {
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
-                  <a className="more" href={projectHref(proj)}>
+                  <ExtLink className="more" href={projectHref(proj)}>
                     {displayUrl(proj.url)}
-                  </a>
+                  </ExtLink>
                 </div>
               </article>
             )
@@ -81,7 +82,7 @@ export default function Projects() {
             const L = localizeProject(proj, lang)
             return (
               <li key={proj.slug}>
-                <a href={projectHref(proj)}>
+                <ExtLink href={projectHref(proj)}>
                   <span className="n">
                     {fmt(proj.client)}
                     {proj.isNonprofit && <em>{p.nonprofit}</em>}
@@ -93,7 +94,7 @@ export default function Projects() {
                   </span>
                   <span className="d">{L.summary}</span>
                   <span className={`u${proj.todo ? ' todo' : ''}`}>{proj.todo ? p.verifyUrl : displayUrl(proj.url)}</span>
-                </a>
+                </ExtLink>
               </li>
             )
           })}

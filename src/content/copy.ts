@@ -80,12 +80,13 @@ export type Copy = {
     copied: string
   }
   dock: { text: string; cta: string }
-  footer: { text: string; top: string }
+  footer: { text: string; top: string; tagline: string }
+  extNote: string
 }
 
 const cs: Copy = {
   meta: {
-    title: 'Petr Skřivánek – CRM, e-mailing, měření a AI pro neziskovky',
+    title: 'Petr Skřivánek – Digital marketer pro neziskovky',
     description:
       'Pomáhám neziskovkám a malým organizacím se Salesforce, e-mailovými automatizacemi, měřením a AI. Olomouc.',
     ogLocale: 'cs_CZ',
@@ -99,11 +100,11 @@ const cs: Copy = {
     close: 'Zavřít menu',
     mainLabel: 'Hlavní',
     book: 'Rezervovat hovor',
-    switchTo: { label: 'EN', href: '/en/' },
+    switchTo: { label: 'English', href: '/en/' },
   },
   hero: {
     h1: 'Propojím vaše nástroje, aby pracovaly za vás',
-    lead: 'Pomáhám neziskovkám a malým organizacím se Salesforce, e-mailovými automatizacemi, měřením a AI. Nastavím, propojím a vysvětlím – bez žargonu.',
+    lead: 'Pomáhám neziskovkám a malým organizacím se Salesforce, e-mailovými automatizacemi, měřením a AI. Nastavím, propojím a vysvětlím.',
     cta: 'Rezervovat 30 minut zdarma',
     ctaProjects: 'Projekty',
     mapTitle: 'Trasa spolupráce: Salesforce CRM, e-maily, měření a AI',
@@ -139,7 +140,7 @@ const cs: Copy = {
       },
     ],
     alsoLabel: 'Dál umím:',
-    also: 'online reklamu včetně Google Ad Grants a Skliku, UX a weby od wireframu po spuštění.',
+    also: 'online reklamu včetně Google Ad Grants a Skliku a tvorbu webů po jednotlivých krocích. Nejsem designér, ale baví mě UX a UI a umím poradit, co má web dělat. Malým neziskovkám ho postavím s pomocí AI.',
   },
   projects: {
     h2: 'Projekty',
@@ -177,7 +178,7 @@ const cs: Copy = {
   },
   about: {
     h2: 'O mně',
-    lead: 'Jsem Petr. V Nadaci Partnerství pracuji jako manažer marketingových technologií a pro další organizace nastavuji CRM, e-mailing, měření a AI.',
+    lead: 'Jsem Petr. V Nadaci Partnerství pracuji jako manažer marketingových technologií a digitálního marketingu a pro další organizace nastavuji CRM, e-mailing, měření a AI.',
     p1: 'Hledám praktická řešení, která šetří čas i peníze. Co neumím, dohledám, nebo najdu nástroj, který si poradí.',
     p2: 'Vystudoval jsem cestovní ruch, takže mě baví i smysluplné lokální projekty a destinace, třeba na Broumovsku.',
     photoAlt: 'Petr Skřivánek',
@@ -209,12 +210,13 @@ const cs: Copy = {
     copied: 'Zkopírováno',
   },
   dock: { text: '30 minut zdarma', cta: 'Rezervovat hovor' },
-  footer: { text: '© 2026 Petr Skřivánek, Olomouc', top: 'Nahoru' },
+  footer: { text: '© 2026 Petr Skřivánek', top: 'Nahoru', tagline: 'Olomouc' },
+  extNote: '(otevře se v novém okně)',
 }
 
 const en: Copy = {
   meta: {
-    title: 'Petr Skřivánek – CRM, email automation, analytics and AI for nonprofits',
+    title: 'Petr Skřivánek – Digital marketer for nonprofits',
     description:
       'I help nonprofits and small organisations with Salesforce, email automation, analytics and AI. Based in Olomouc, Czech Republic.',
     ogLocale: 'en_GB',
@@ -228,11 +230,11 @@ const en: Copy = {
     close: 'Close menu',
     mainLabel: 'Main',
     book: 'Book a call',
-    switchTo: { label: 'CS', href: '/' },
+    switchTo: { label: 'Česky', href: '/' },
   },
   hero: {
     h1: 'I connect your tools so they work for you',
-    lead: 'I help nonprofits and small organisations with Salesforce, email automation, analytics and AI. I set it up, connect it and explain it – no jargon.',
+    lead: 'I help nonprofits and small organisations with Salesforce, email automation, analytics and AI. I set it up, connect it and explain it.',
     cta: 'Book 30 minutes for free',
     ctaProjects: 'Projects',
     mapTitle: 'Route of our work together: Salesforce CRM, email, analytics and AI',
@@ -268,7 +270,7 @@ const en: Copy = {
       },
     ],
     alsoLabel: 'I also do:',
-    also: 'online advertising including Google Ad Grants and Sklik, UX and websites from wireframe to launch.',
+    also: 'online advertising including Google Ad Grants and Sklik, and building websites step by step. I’m not a designer, but I enjoy UX and UI and I can advise what a website should do. For small nonprofits I build the site myself with the help of AI.',
   },
   projects: {
     h2: 'Projects',
@@ -306,7 +308,7 @@ const en: Copy = {
   },
   about: {
     h2: 'About me',
-    lead: 'I’m Petr. At Nadace Partnerství I work as a marketing technology manager, and for other organisations I set up CRM, email, analytics and AI.',
+    lead: 'I’m Petr. At Nadace Partnerství I work as a marketing technology and digital marketing manager, and for other organisations I set up CRM, email, analytics and AI.',
     p1: 'I look for practical solutions that save time and money. What I don’t know, I look up, or I find a tool that does.',
     p2: 'I studied tourism, so I also enjoy meaningful local projects and destinations, such as the Broumov region.',
     photoAlt: 'Petr Skřivánek',
@@ -338,7 +340,8 @@ const en: Copy = {
     copied: 'Copied',
   },
   dock: { text: '30 minutes for free', cta: 'Book a call' },
-  footer: { text: '© 2026 Petr Skřivánek, Olomouc', top: 'Back to top' },
+  footer: { text: '© 2026 Petr Skřivánek', top: 'Back to top', tagline: 'Olomouc, Czech Republic' },
+  extNote: '(opens in a new window)',
 }
 
 export const copy: Record<Lang, Copy> = { cs, en }

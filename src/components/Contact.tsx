@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import ExtLink from '@/components/ExtLink'
 import { useLang } from '@/i18n'
 import { CALENDLY_PLAIN_URL, CALENDLY_URL, EMAIL, INSTAGRAM, LINKEDIN } from '@/content/site'
 
@@ -77,10 +78,10 @@ export default function Contact() {
             {fmt(c.mailLabel)}: <a href={`mailto:${EMAIL}`}>{EMAIL}</a> <CopyEmail />
           </span>
           <span>
-            LinkedIn: <a href={LINKEDIN.href}>{LINKEDIN.label}</a>
+            LinkedIn: <ExtLink href={LINKEDIN.href}>{LINKEDIN.label}</ExtLink>
           </span>
           <span>
-            Instagram: <a href={INSTAGRAM.href}>{INSTAGRAM.label}</a>
+            Instagram: <ExtLink href={INSTAGRAM.href}>{INSTAGRAM.label}</ExtLink>
           </span>
         </div>
       </div>

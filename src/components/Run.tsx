@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import ExtLink from '@/components/ExtLink'
 import { useLang } from '@/i18n'
 import { APP_URL, RUN, STRAVA_URL, TREE_PROJECT_URL } from '@/content/site'
 
@@ -49,9 +50,9 @@ export default function Run() {
             {fmt(r.lead)}
           </p>
           <div className="links">
-            <a className="btn btn-ghost" href={STRAVA_URL}>
+            <ExtLink className="btn btn-ghost" href={STRAVA_URL}>
               {r.stravaButton}
-            </a>
+            </ExtLink>
           </div>
         </div>
       </div>
@@ -104,17 +105,17 @@ export default function Run() {
           <p className="status">{r.appStatus}</p>
           <h3 id="tile-app">{fmt(r.appTitle)}</h3>
           <p>{fmt(r.appText)}</p>
-          <a className="btn btn-primary btn-sm" href={APP_URL}>
+          <ExtLink className="btn btn-primary btn-sm" href={APP_URL}>
             {r.appLink}
-          </a>
+          </ExtLink>
         </section>
 
         <section className="tile" aria-labelledby="tile-tree">
           <h3 id="tile-tree">{fmt(r.treeTitle)}</h3>
           <p>{fmt(r.treeText)}</p>
-          <a className="more" href={TREE_PROJECT_URL}>
+          <ExtLink className="more" href={TREE_PROJECT_URL}>
             {r.treeLink}
-          </a>
+          </ExtLink>
         </section>
       </div>
     </section>

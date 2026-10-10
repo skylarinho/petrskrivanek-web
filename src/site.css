@@ -276,3 +276,27 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 @media (min-width:860px){
   .run .wrap.tiles{grid-template-columns:repeat(2,1fr);gap:22px}
 }
+
+/* ---------- Úpravy: logo, jazyk, patička ---------- */
+.brand img{background:transparent;border-radius:0;object-fit:contain}
+.lang-link{color:var(--ink-2);font-size:14px;font-weight:500;text-decoration:none;opacity:.9}
+.lang-link:hover{text-decoration:underline;text-underline-offset:3px;opacity:1}
+.drawer .lang-link{align-self:center;padding:8px}
+
+footer{padding:48px 0 104px;font-size:15px}
+.wrap.foot{display:grid;gap:28px;align-items:start}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand img{width:44px;height:44px;object-fit:contain;background:var(--bg);border-radius:50%;padding:4px}
+.foot-brand strong{display:block;color:#fff;font-size:17px}
+.foot-brand span{color:#93A69E}
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+.foot-nav a,.foot-top{color:#C9D6D0;text-decoration:none}
+.foot-nav a:hover,.foot-top:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.foot-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;margin:0;max-width:none}
+footer .lang-link{color:#93A69E}
+footer .lang-link:hover{color:#fff}
+@media (min-width:860px){
+  footer{padding:56px 0 32px}
+  .wrap.foot{grid-template-columns:1fr auto auto;align-items:center;gap:32px 48px}
+  .foot-meta{grid-column:1 / -1}
+}

@@ -24,12 +24,15 @@ npm run preview  # náhled produkčního buildu
 
 České texty procházejí funkcí `cz()` (nezlomitelné mezery, pomlčky, uvozovky). Chybějící údaje se označují `todo: true`, web je ukáže jako „Doplnit“.
 
-## Nasazení na Cloudflare Pages
-1. Workers & Pages → Create → Pages → Connect to Git → repo `skylarinho/petrskrivanek-web`.
-2. Build command `npm run build`, output directory `dist`, produkční větev `main`. Proměnná `NODE_VERSION` není potřeba, Node bere z `.nvmrc`.
-3. Větev `redesign` dostane náhledovou URL `redesign.<projekt>.pages.dev`.
-4. Po schválení merge `redesign` → `main`.
-5. Pages projekt → Custom domains → `petrskrivanek.cz` a `www`. Staré DNS záznamy pro apex a `www`, které míří jinam, předtím smaž. Záznam pro `hnizdo` nech.
-6. Redirect Rule `www.petrskrivanek.cz` → `petrskrivanek.cz`.
+## Nasazení (Cloudflare Workers, statické soubory)
+Web běží jako Cloudflare Worker se statickými soubory (`wrangler.jsonc` → složka `dist`). Každý push do `main` spustí nový build a nasazení.
+
+- **Build command:** `npm run build`, **Deploy command:** `npx wrangler deploy` (Workers & Pages → projekt `petrskrivanek-web` → Settings → Build).
+- **Wrangler konfigurace v repu je nutná.** Bez `wrangler.jsonc` se Cloudflare pokouší projekt sám „nakonfigurovat pro Vite“ a build spadne.
+- **Žádné proměnné ani API tokeny** web nepotřebuje.
+- **Doména:** `petrskrivanek.cz` je přidaná v Settings → Domains & Routes, DNS spravuje Cloudflare (nameservery `*.ns.cloudflare.com`, Active24 je jen registrátor). Záznam `www` je proxied CNAME na `petrskrivanek.cz` a Redirect Rule „Redirect from WWW to root“ ho přesměruje na doménu bez `www`.
+- **Subdoména `hnizdo`** míří na Lovable (samostatný projekt, zatím se nepřesouvá). Záznamy `_lovable…` v DNS nech být.
+- **Hlavička a cache:** `public/_headers`. Chybová stránka: `public/404.html`.
+- **Po nasazení:** Google Search Console (doménová property, TXT záznam v Cloudflare DNS) a odeslání `https://petrskrivanek.cz/sitemap.xml`.
 
 Starý web (jednosouborový HTML) je v historii gitu před commitem „Scaffold Vite + React…“.

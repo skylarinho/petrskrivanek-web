@@ -5,8 +5,8 @@ Vizuální předloha je `mockup/index.html` a `mockup/case-studie.html`. Je záv
 
 ## Stack a cíl
 - Stávající projekt pochází z Lovable: Vite + React + TS + Tailwind + shadcn/ui. Stack ponech, jen ho vyčisti.
-- Cílový hosting: GitHub → Cloudflare Pages → doména petrskrivanek.cz.
-- Build `npm run build`, výstup `dist/`. SPA fallback řeš přes `public/_redirects` (`/* /index.html 200`), pokud nepoužiješ prerender.
+- Hosting: GitHub → Cloudflare Workers (statické soubory, `wrangler.jsonc`) → doména petrskrivanek.cz (živě od 10/2026).
+- Build `npm run build`, výstup `dist/` (předrenderované `/` a `/en/`), SPA fallback se nepoužívá.
 - Případové studie jsou **zatím skryté**. Šablonu (`mockup/case-studie.html`) připrav jako route `/projekty/:slug` za přepínačem `SHOW_CASE_STUDIES = false`. Dokud je vypnutý, route se negeneruje a karty odkazují na web klienta. Po zapnutí musí být studie indexovatelné (prerender, např. `vite-react-ssg`, před instalací se zeptej).
 
 ## Odstranit z Lovable

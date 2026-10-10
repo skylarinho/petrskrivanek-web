@@ -10,7 +10,7 @@ describe('projects', () => {
     expect(new Set(projects.map((p) => p.slug)).size).toBe(projects.length)
   })
   it('počty u čipů odpovídají mockupu', () => {
-    expect([countByFilter('all'), countByFilter('nz'), countByFilter('mer'), countByFilter('web')]).toEqual([9, 2, 8, 2])
+    expect([countByFilter('all'), countByFilter('nz'), countByFilter('mer'), countByFilter('web')]).toEqual([9, 3, 8, 2])
   })
   it('displayUrl vypustí www', () => {
     expect(displayUrl('https://www.katu.cz')).toBe('katu.cz')

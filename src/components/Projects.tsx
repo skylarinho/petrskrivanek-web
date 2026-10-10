@@ -6,6 +6,7 @@ import {
   PROJECT_FILTERS,
   countByFilter,
   displayUrl,
+  NONPROFIT_BADGE,
   featuredProjects,
   otherProjects,
   projectHref,
@@ -48,7 +49,7 @@ export default function Projects() {
                 <div className="body">
                   <p className="client">
                     {fmt(proj.client)}
-                    {proj.isNonprofit && <span>{p.nonprofit}</span>}
+                    {proj.isNonprofit && NONPROFIT_BADGE.featured && <span>{p.nonprofit}</span>}
                   </p>
                   <h3>{L.title}</h3>
                   <p>{L.summary}</p>
@@ -85,7 +86,7 @@ export default function Projects() {
                 <ExtLink href={projectHref(proj)}>
                   <span className="n">
                     {fmt(proj.client)}
-                    {proj.isNonprofit && <em>{p.nonprofit}</em>}
+                    {proj.isNonprofit && NONPROFIT_BADGE.list && <em>{p.nonprofit}</em>}
                     {proj.formerName && (
                       <em className="was">
                         {p.formerly} {proj.formerName}

@@ -41,6 +41,9 @@ export type Project = {
   todo?: boolean
 }
 
+/** Kde se ukazuje štítek „neziskovka“. Filtr Neziskovky funguje bez ohledu na to. */
+export const NONPROFIT_BADGE = { featured: true, list: false }
+
 /** Přepínač případových studií. Dokud je false, karty vedou na web klienta. */
 export const SHOW_CASE_STUDIES = false
 
@@ -52,7 +55,7 @@ export const projects: Project[] = [
     isNonprofit: true,
     title: 'Celé technické zázemí jedné neziskovky',
     summary:
-      'Web, doména, e-maily, newsletter i online dary. Starám se o všechno technické, aby se Věra mohla naplno věnovat rodinám, kterým pomáhá.',
+      'Web, doména, e-maily, newsletter i online dary. Starám se o všechno technické, aby se mohli naplno věnovat rodinám, kterým pomáhají.',
     tags: ['Web', 'Doména a e-maily', 'Brevo', 'Darujme', 'Měření'],
     filters: ['nz', 'web', 'mer'],
     url: 'https://velvetsmile.com',
@@ -104,11 +107,11 @@ export const projects: Project[] = [
   {
     slug: 'evropsky-strom-roku',
     client: 'Evropský strom roku',
-    isNonprofit: false,
+    isNonprofit: true,
     title: 'Koordinace a rozvoj projektu Nadace Partnerství',
     summary: 'Koordinace a rozvoj projektu Nadace Partnerství',
     tags: [],
-    filters: [],
+    filters: ['nz'],
     url: 'https://treeoftheyear.org',
     featured: false,
     order: 2,

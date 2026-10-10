@@ -321,3 +321,10 @@ footer .lang-link:hover{color:#fff}
 @media (min-width:860px){
   .case.feat img.shot{object-position:8% center}
 }
+
+/* Hlavní karta (Velvet Smile): screenshot 3:2 bez natahování, na desktopu vedle textu */
+.case.feat img.shot{aspect-ratio:3/2}
+@media (min-width:860px){
+  .case.feat img.shot{flex:1.1 1 0;aspect-ratio:auto;min-height:0;object-position:center}
+  .case.feat .body{flex:1 1 0;padding:32px 36px;gap:10px}
+}

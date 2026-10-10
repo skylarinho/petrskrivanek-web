@@ -7,7 +7,7 @@ export const projectsEn: Record<string, { title: string; summary: string; tags?:
   'velvet-smile': {
     title: 'The entire technical backbone of a nonprofit',
     summary:
-      'Website, domain, email, newsletter and online donations. I take care of everything technical so Věra can focus fully on the families she helps.',
+      'Website, domain, email, newsletter and online donations. I take care of everything technical so they can focus fully on the families they help.',
     tags: ['Website', 'Domain and email', 'Brevo', 'Darujme', 'Analytics'],
   },
   'otevrena-zahrada': {

@@ -180,7 +180,7 @@ const cs: Copy = {
     h2: 'O mně',
     lead: 'Jsem Petr. V Nadaci Partnerství pracuji jako manažer marketingových technologií a digitálního marketingu a pro další organizace nastavuji CRM, e-mailing, měření a AI.',
     p1: 'Hledám praktická řešení, která šetří čas i peníze. Co neumím, dohledám, nebo najdu nástroj, který si poradí.',
-    p2: 'Vystudoval jsem cestovní ruch, takže mě baví i smysluplné lokální projekty a destinace, třeba na Broumovsku.',
+    p2: 'Vystudoval jsem cestovní ruch, takže mě baví i smysluplné lokální projekty a destinace.',
     photoAlt: 'Petr Skřivánek',
     facts: [
       { value: '9', label: 'let v marketingu' },
@@ -310,7 +310,7 @@ const en: Copy = {
     h2: 'About me',
     lead: 'I’m Petr. At Nadace Partnerství I work as a marketing technology and digital marketing manager, and for other organisations I set up CRM, email, analytics and AI.',
     p1: 'I look for practical solutions that save time and money. What I don’t know, I look up, or I find a tool that does.',
-    p2: 'I studied tourism, so I also enjoy meaningful local projects and destinations, such as the Broumov region.',
+    p2: 'I studied tourism, so I also enjoy meaningful local projects and destinations.',
     photoAlt: 'Petr Skřivánek',
     facts: [
       { value: '9', label: 'years in marketing' },

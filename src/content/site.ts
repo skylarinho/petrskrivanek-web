@@ -4,7 +4,7 @@ export const CALENDLY_URL =
   'https://calendly.com/petr-skrivanek/3o-minut-se-skrivankem?hide_gdpr_banner=1&primary_color=1d332e'
 export const CALENDLY_PLAIN_URL = 'https://calendly.com/petr-skrivanek/3o-minut-se-skrivankem'
 
-/** E-mail převzatý z mockupu. Na starém webu žádný nebyl, potvrdit. */
+/** Kontaktní e-mail (potvrzeno). */
 export const EMAIL = 'petr.skrivanek@gmail.com'
 export const LINKEDIN = { href: 'https://www.linkedin.com/in/petrskrivanek', label: '/in/petrskrivanek' }
 export const INSTAGRAM = { href: 'https://www.instagram.com/skylarinho', label: '@skylarinho' }

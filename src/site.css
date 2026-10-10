@@ -306,3 +306,18 @@ footer .lang-link:hover{color:#fff}
 @media (min-width:860px){
   .case.feat img.shot{object-position:center;flex:1.2 1 0;width:auto;min-width:0;height:auto;aspect-ratio:auto;min-height:380px}
 }
+
+/* Screenshoty v poměru 2:1 (podle podkladů), hlavní karta je širší, aby obrázek lícoval */
+.case img.shot{aspect-ratio:2/1;object-position:center}
+@media (min-width:860px){
+  .case.feat img.shot{flex:1.65 1 0;aspect-ratio:1.9/1;min-height:0;height:auto;align-self:stretch}
+}
+@media (min-width:860px){
+  .case.feat img.shot{flex:1.9 1 0;aspect-ratio:2/1}
+  .case.feat .body{flex:1 1 0;padding:28px 32px;gap:8px}
+  .case.feat h3{font-size:40px}
+  .case.feat .body p:not(.client){font-size:16px}
+}
+@media (min-width:860px){
+  .case.feat img.shot{object-position:8% center}
+}

@@ -37,7 +37,7 @@ export default function Projects() {
             return (
               <article className={`case${i === 0 ? ' feat' : ''}`} key={proj.slug}>
                 {proj.screenshot ? (
-                  <img className="shot" src={proj.screenshot} alt={`${proj.client} – ${displayUrl(proj.url)}`} width={1200} height={750} loading="lazy" />
+                  <img className="shot" src={proj.screenshot} alt={`${proj.client} – ${displayUrl(proj.url)}`} width={1200} height={600} loading="lazy" />
                 ) : (
                   <div className="shot todo">
                     {displayUrl(proj.url)}

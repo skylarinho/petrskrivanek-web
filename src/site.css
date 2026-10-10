@@ -234,10 +234,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 .case .more{width:fit-content}
 
 /* Běh – blok o programu Běžím pro stromy */
-.tree{margin-top:32px;border-left:4px solid var(--ochre);padding:4px 0 4px 18px;max-width:560px}
-.tree h3{font-size:30px}
-.tree p{margin-top:6px;color:var(--ink-2)}
-.tree .more{display:inline-block;margin-top:8px;font-weight:700;text-decoration-thickness:2px;text-underline-offset:4px}
 
 /* O mně – placeholder u faktů */
 .facts div.todo{border-radius:var(--r-s);padding:10px 8px 8px}
@@ -250,4 +246,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 }
 @media (max-width:859px){
   .top-cta{display:none}
+}
+
+/* Běh – dlaždice */
+.tiles{display:grid;gap:18px;margin-top:48px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:24px;display:grid;gap:12px;align-content:start;padding-top:24px;padding-bottom:24px}
+.tile h3{font-size:32px}
+.tile p{color:var(--ink-2)}
+.tile .more{width:fit-content;font-weight:700;text-decoration-thickness:2px;text-underline-offset:4px}
+.stat-list{display:grid;gap:14px;margin:0;padding:0}
+.stat-list>div{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:12px;color:var(--ink)}
+.stat-list dt{grid-column:2;color:var(--ink-2);font-size:15px}
+.stat-list dd{grid-column:3;grid-row:1;margin:0;font:800 40px/1 var(--display)}
+.stat-list svg{grid-row:1;color:var(--ochre-text)}
+.best-list{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin:0;padding:0}
+.best-list>div{border-top:1.5px solid var(--ink);padding-top:10px}
+.best-list dt{font-size:15px;color:var(--ink-2)}
+.best-list dd{margin:2px 0 0;font:800 40px/1 var(--display)}
+.tile-app{background:var(--ink);border-color:var(--ink);color:#fff}
+.tile-app h3{color:#fff}
+.tile-app p{color:#D5DFDA}
+.tile-app .status{font-weight:700;font-size:13px;width:fit-content;background:var(--leaf);color:var(--ink);padding:3px 10px;border-radius:99px}
+.tile-app .btn{background:#fff;color:var(--ink);border-color:#fff;width:fit-content;margin-top:4px}
+@media (min-width:860px){
+  .tiles{grid-template-columns:repeat(2,1fr);gap:22px}
+  .tile{padding:32px}
+}
+.run .wrap.tiles{grid-template-columns:1fr;align-items:stretch;gap:18px}
+@media (min-width:860px){
+  .run .wrap.tiles{grid-template-columns:repeat(2,1fr);gap:22px}
 }

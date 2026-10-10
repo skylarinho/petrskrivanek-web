@@ -20,10 +20,10 @@ export default function About() {
           <p>{fmt(a.p2)}</p>
           <dl className="facts">
             {a.facts.map((f) => (
-              <div key={f.label} className={f.todo ? 'todo' : undefined}>
+              <div key={f.label}>
                 <dt>{f.value}</dt>
                 <dd>
-                  {fmt(f.label)} {f.todo && <span className="todo-tag">{t.projects.todo}</span>}
+                  {fmt(f.label)}
                 </dd>
               </div>
             ))}

@@ -9,7 +9,6 @@ export default function Services() {
       <div className="wrap">
         <div className="sec-head">
           <h2>{s.h2}</h2>
-          <p className="lead">{fmt(s.lead)}</p>
         </div>
         <ol className="stops">
           {s.items.map((it) => (

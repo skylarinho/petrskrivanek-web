@@ -5,6 +5,55 @@ import { ROUTE_PATH } from '@/content/routePath'
 // Zpoždění naskočení bodů (s) při kreslení trasy
 const POP_DELAYS = [0.9, 1.35, 1.9, 2.4]
 
+/** Listnatý strom: dvě vrstvy kruhů, aby uvnitř koruny nebyly vidět obrysy. */
+function Tree({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
+  const crown = [
+    [0, -26, 11],
+    [-9, -18, 8],
+    [9, -18, 8],
+  ]
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <path d="M0 0V-14" stroke="#1D332E" strokeWidth="3" strokeLinecap="round" fill="none" />
+      {crown.map(([cx, cy, r]) => (
+        <circle key={`o${cx}`} cx={cx} cy={cy} r={r} fill="#D7E6C3" stroke="#1D332E" strokeWidth="2" />
+      ))}
+      {crown.map(([cx, cy, r]) => (
+        <circle key={`i${cx}`} cx={cx} cy={cy} r={r - 1} fill="#D7E6C3" />
+      ))}
+    </g>
+  )
+}
+
+/** Dekorace hero mapy: běžec a listnaté stromy kolem trasy. */
+function HeroArt() {
+  return (
+    <g aria-hidden="true">
+      <Tree x={44} y={92} />
+      <Tree x={76} y={116} s={0.8} />
+      <Tree x={24} y={140} s={0.7} />
+      <Tree x={338} y={226} s={0.9} />
+      <Tree x={340} y={272} s={0.75} />
+      <Tree x={150} y={238} s={0.75} />
+      <g
+        transform="translate(206 246)"
+        fill="none"
+        stroke="#1D332E"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="4" cy="-42" r="5" fill="#1D332E" stroke="none" />
+        <path d="M2 -34 L-2 -15" />
+        <path d="M1 -31 L10 -25 L16 -31" />
+        <path d="M1 -31 L-8 -27 L-12 -19" />
+        <path d="M-2 -15 L8 -9 L6 1" />
+        <path d="M-2 -15 L-10 -5 L-18 -9" />
+      </g>
+    </g>
+  )
+}
+
 export default function Hero() {
   const { t, fmt } = useLang()
   const routeRef = useRef<SVGPathElement>(null)
@@ -36,7 +85,6 @@ export default function Hero() {
               {t.hero.ctaProjects}
             </a>
           </div>
-          <p className="meta">{t.hero.place}</p>
         </div>
 
         <figure className="map">
@@ -50,6 +98,7 @@ export default function Hero() {
               <ellipse cx="200" cy="175" rx="58" ry="34" />
               <ellipse cx="200" cy="175" rx="30" ry="16" />
             </g>
+            <HeroArt />
             <path ref={routeRef} className="route" id="route" d={ROUTE_PATH} />
             <g className="sf">
               <circle cx="36" cy="282" r="5" fill="#1D332E" />
@@ -69,7 +118,6 @@ export default function Hero() {
               </g>
             ))}
           </svg>
-          <figcaption>{fmt(t.hero.mapCaption)}</figcaption>
         </figure>
       </div>
     </section>

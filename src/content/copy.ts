@@ -13,22 +13,18 @@ export type Copy = {
     lead: string
     cta: string
     ctaProjects: string
-    place: string
     mapTitle: string
-    mapCaption: string
     startFinish: string
     checkpoints: { crm: string; email: string; data: string; ai: string }
   }
   services: {
     h2: string
-    lead: string
     items: { id: string; title: string; text: string; tools: string[] }[]
     alsoLabel: string
     also: string
   }
   projects: {
     h2: string
-    lead: string
     moreHeading: string
     filterLabel: string
     filters: { all: string; nz: string; mer: string; web: string }
@@ -42,15 +38,23 @@ export type Copy = {
   run: {
     h2: string
     lead: string
-    lead2: string
     bibEvent: string
     bibCaption: string
     bibLabel: string
     stravaButton: string
+    totalTitle: string
+    totalKm: string
+    totalActivities: string
+    totalElevation: string
+    bestTitle: string
+    best: { k5: string; k10: string; half: string; marathon: string }
+    appTitle: string
+    appText: string
+    appStatus: string
+    appLink: string
     treeTitle: string
     treeText: string
     treeLink: string
-    todo: string
   }
   about: {
     h2: string
@@ -58,7 +62,7 @@ export type Copy = {
     p1: string
     p2: string
     photoAlt: string
-    facts: { value: string; label: string; todo?: boolean }[]
+    facts: { value: string; label: string }[]
     crisisTitle: string
     crisisText: string
   }
@@ -102,27 +106,24 @@ const cs: Copy = {
     lead: 'Pomáhám neziskovkám a malým organizacím se Salesforce, e-mailovými automatizacemi, měřením a AI. Nastavím, propojím a vysvětlím – bez žargonu.',
     cta: 'Rezervovat 30 minut zdarma',
     ctaProjects: 'Projekty',
-    place: 'Olomouc',
     mapTitle: 'Trasa spolupráce: Salesforce CRM, e-maily, měření a AI',
-    mapCaption: 'Kontakty, e-maily, data a AI jako jedna trasa, ne čtyři oddělené nástroje.',
     startFinish: 'start a cíl',
     checkpoints: { crm: 'Salesforce CRM', email: 'E-maily', data: 'Měření', ai: 'AI' },
   },
   services: {
     h2: 'Co dělám',
-    lead: 'Čtyři věci, které spolu souvisejí. Kontakty v CRM, e-maily z nich, měření výsledků a AI na rutinu.',
     items: [
       {
         id: 's-crm',
         title: 'CRM a Salesforce',
         text: 'Dárci, dobrovolníci a partneři na jednom místě. Uvidíte, kdo s kým kdy mluvil, od prvního kontaktu po dlouhodobý vztah.',
-        tools: ['Salesforce', 'Airtable', 'Procesy'],
+        tools: ['Salesforce', 'Procesy'],
       },
       {
         id: 's-email',
         title: 'E-mailing a automatizace',
         text: 'Technická stránka e-mailingu: napojení na CRM, automatické série a sledování, aby zprávy chodily správným lidem ve správný čas.',
-        tools: ['Brevo', 'Zapier', 'Make'], // nástroje potvrdit (docs/brief.md)
+        tools: ['Brevo', 'Zapier', 'API'],
       },
       {
         id: 's-data',
@@ -142,7 +143,6 @@ const cs: Copy = {
   },
   projects: {
     h2: 'Projekty',
-    lead: 'Vybrané spolupráce podrobně, ostatní v přehledu pod nimi.',
     moreHeading: 'Další spolupráce',
     filterLabel: 'Filtr projektů',
     filters: { all: 'Vše', nz: 'Neziskovky', mer: 'Měření', web: 'Weby a UX' },
@@ -156,16 +156,24 @@ const cs: Copy = {
   run: {
     h2: 'Kilometry, které sázejí stromy',
     lead: 'V běhu si urovnávám myšlenky a často tam dostávám nejlepší nápady.',
-    lead2: 'Běhám zhruba 160 km měsíčně a část z toho dává smysl i pro krajinu.',
-    bibEvent: 'Naběháno',
-    bibCaption: 'kilometrů, zhruba 160 měsíčně',
-    bibLabel: 'Naběháno přes 1 100 kilometrů, zhruba 160 kilometrů měsíčně',
+    bibEvent: 'Letos naběháno',
+    bibCaption: 'kilometrů v roce 2026',
+    bibLabel: 'V roce 2026 naběháno {km} kilometrů',
     stravaButton: 'Moje běhy na Stravě',
+    totalTitle: 'Celkem na Stravě',
+    totalKm: 'kilometrů',
+    totalActivities: 'aktivit',
+    totalElevation: 'metrů převýšení',
+    bestTitle: 'Osobáky',
+    best: { k5: '5 km', k10: '10 km', half: 'Půlmaraton', marathon: 'Maraton' },
+    appTitle: 'Aplikace Běžím pro stromy',
+    appText: 'Vyvíjím aplikaci pro běžecký klub Nadace Partnerství. Spojuje tréninky s objevováním stromů a sbíráním kilometrů.',
+    appStatus: 'Testování',
+    appLink: 'Otevřít aplikaci',
     treeTitle: 'Běžím pro stromy',
     treeText:
       'Koordinuji program Běžím pro stromy Nadace Partnerství. Běžci při registraci na závody RunCzech nebo do virtuálního Běhu pro stromy přispívají na výsadby a péči o stromy.',
     treeLink: 'O projektu',
-    todo: 'Doplnit',
   },
   about: {
     h2: 'O mně',
@@ -174,14 +182,14 @@ const cs: Copy = {
     p2: 'Vystudoval jsem cestovní ruch, takže mě baví i smysluplné lokální projekty a destinace, třeba na Broumovsku.',
     photoAlt: 'Petr Skřivánek',
     facts: [
-      { value: '8+', label: 'let v marketingu', todo: true },
-      { value: '10', label: 'let koordinace projektů', todo: true },
+      { value: '9', label: 'let v marketingu' },
+      { value: '16', label: 'let v komunikaci' },
+      { value: '10', label: 'let koordinace projektů' },
       { value: '12+', label: 'projektů v portfoliu' },
-      { value: '5', label: 'let Běžím pro stromy', todo: true },
     ],
     crisisTitle: 'Když jde do tuhého',
     crisisText:
-      'Během povodní v září 2024 jsem v Zátoru převzal krizovou komunikaci: sítě, PR, novináře, fotodokumentaci i fundraising. Nechlubím se tím, ale umím to.',
+      'Během povodní v září 2024 jsem v Zátoru převzal krizovou komunikaci: sítě, PR, komunikaci s novináři, fotodokumentaci i fundraising. Nechlubím se tím, ale fakt mi to jde :-)',
   },
   steps: {
     h2: 'Jak spolupráce probíhá',
@@ -227,27 +235,24 @@ const en: Copy = {
     lead: 'I help nonprofits and small organisations with Salesforce, email automation, analytics and AI. I set it up, connect it and explain it – no jargon.',
     cta: 'Book 30 minutes for free',
     ctaProjects: 'Projects',
-    place: 'Olomouc, Czech Republic',
     mapTitle: 'Route of our work together: Salesforce CRM, email, analytics and AI',
-    mapCaption: 'Contacts, email, data and AI as one route, not four separate tools.',
     startFinish: 'start & finish',
     checkpoints: { crm: 'Salesforce CRM', email: 'Email', data: 'Analytics', ai: 'AI' },
   },
   services: {
     h2: 'What I do',
-    lead: 'Four connected things. Contacts in the CRM, emails built on them, measuring the results, and AI for the routine.',
     items: [
       {
         id: 's-crm',
         title: 'CRM and Salesforce',
         text: 'Donors, volunteers and partners in one place. See who talked to whom and when, from the first contact to a long-term relationship.',
-        tools: ['Salesforce', 'Airtable', 'Processes'],
+        tools: ['Salesforce', 'Processes'],
       },
       {
         id: 's-email',
         title: 'Email and automation',
         text: 'The technical side of email: CRM integration, automated series and tracking, so the right messages reach the right people at the right time.',
-        tools: ['Brevo', 'Zapier', 'Make'],
+        tools: ['Brevo', 'Zapier', 'API'],
       },
       {
         id: 's-data',
@@ -267,7 +272,6 @@ const en: Copy = {
   },
   projects: {
     h2: 'Projects',
-    lead: 'Selected collaborations in detail, the others in the overview below.',
     moreHeading: 'More collaborations',
     filterLabel: 'Project filter',
     filters: { all: 'All', nz: 'Nonprofits', mer: 'Analytics', web: 'Web and UX' },
@@ -281,16 +285,24 @@ const en: Copy = {
   run: {
     h2: 'Kilometres that plant trees',
     lead: 'Running is where I sort out my thoughts, and often where my best ideas come from.',
-    lead2: 'I run roughly 160 km a month, and part of it makes sense for the landscape too.',
-    bibEvent: 'Run so far',
-    bibCaption: 'kilometres, roughly 160 a month',
-    bibLabel: 'Over 1,100 kilometres run, roughly 160 kilometres a month',
+    bibEvent: 'Run this year',
+    bibCaption: 'kilometres in 2026',
+    bibLabel: '{km} kilometres run in 2026',
     stravaButton: 'My runs on Strava',
+    totalTitle: 'All-time on Strava',
+    totalKm: 'kilometres',
+    totalActivities: 'activities',
+    totalElevation: 'metres of elevation',
+    bestTitle: 'Personal bests',
+    best: { k5: '5 km', k10: '10 km', half: 'Half marathon', marathon: 'Marathon' },
+    appTitle: 'Běžím pro stromy app',
+    appText: 'I’m developing an app for the Nadace Partnerství running club. It combines training with discovering trees and collecting kilometres.',
+    appStatus: 'Testing',
+    appLink: 'Open the app',
     treeTitle: 'Běžím pro stromy (Running for Trees)',
     treeText:
       'I coordinate the Běžím pro stromy programme at Nadace Partnerství (the Partnership Foundation). Runners who sign up for RunCzech races or the virtual Run for Trees contribute to planting and caring for trees.',
     treeLink: 'About the project',
-    todo: 'To do',
   },
   about: {
     h2: 'About me',
@@ -299,14 +311,14 @@ const en: Copy = {
     p2: 'I studied tourism, so I also enjoy meaningful local projects and destinations, such as the Broumov region.',
     photoAlt: 'Petr Skřivánek',
     facts: [
-      { value: '8+', label: 'years in marketing', todo: true },
-      { value: '10', label: 'years of project coordination', todo: true },
+      { value: '9', label: 'years in marketing' },
+      { value: '16', label: 'years in communications' },
+      { value: '10', label: 'years of project coordination' },
       { value: '12+', label: 'projects in the portfolio' },
-      { value: '5', label: 'years of Běžím pro stromy', todo: true },
     ],
     crisisTitle: 'When things get tough',
     crisisText:
-      'During the floods of September 2024 I took over crisis communication in Zátor: social media, PR, press, photo documentation and fundraising. I don’t boast about it, but I can do it.',
+      'During the floods of September 2024 I took over crisis communication in Zátor: social media, PR, press relations, photo documentation and fundraising. I don’t boast about it, but I’m genuinely good at it :-)',
   },
   steps: {
     h2: 'How we work together',

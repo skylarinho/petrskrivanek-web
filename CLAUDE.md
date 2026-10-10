@@ -41,7 +41,7 @@ Vizuální předloha je `mockup/index.html` a `mockup/case-studie.html`. Je záv
 ## Obsah a data
 - Projekty drž v `src/content/projects.ts` (typ `Project`: slug, client, formerName?, isNonprofit, title, summary, tags, filters[], url, featured, order, caseStudy?, todo?). Nový klient se přidává jen sem.
 - **Nic nevymýšlej.** Recenze, čísla, výsledky, citace ani data klientů. Co chybí, zobraz jako viditelný placeholder (`.todo` = čárkovaný okrový obrys + štítek „Doplnit“). Před spuštěním musí být všechny placeholdery vyřešené, nebo blok skrytý.
-- Strava: na stávajícím webu je napojení („Načítám…“), zjisti jak funguje. Tokeny nesmí být v klientském kódu, použij Cloudflare Pages Function. Graf v mockupu je ukázka.
+- Strava: API je odpojené, čísla se mění ručně v `src/content/site.ts` (`RUN`, stav z profilu na Stravě). Žádná Cloudflare Function ani graf, `@uiarc/sparkline` odpadá.
 
 ## Česká typografie (povinné)
 - Nezlomitelná mezera (`\u00A0`) po jednopísmenných předložkách a spojkách (v, k, s, z, o, u, a, i), mezi číslem a jednotkou („30 minut“, „5 let“) a v tisících („3 800“).

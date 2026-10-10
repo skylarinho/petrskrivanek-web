@@ -28,7 +28,6 @@ export default function Projects() {
       <div className="wrap">
         <div className="sec-head">
           <h2>{p.h2}</h2>
-          <p className="lead">{fmt(p.lead)}</p>
         </div>
 
         <div className="cases">

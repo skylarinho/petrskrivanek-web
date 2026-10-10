@@ -17,3 +17,11 @@ describe('projects', () => {
     expect(displayUrl('https://kurzy.novyamos.cz')).toBe('kurzy.novyamos.cz')
   })
 })
+
+import { projectsEn } from './projects.en'
+
+describe('anglické texty projektů', () => {
+  it('má překlad pro každý projekt', () => {
+    for (const p of projects) expect(projectsEn[p.slug]?.summary, p.slug).toBeTruthy()
+  })
+})

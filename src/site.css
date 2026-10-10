@@ -208,3 +208,46 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
   .dock{display:none}
   footer{padding-bottom:24px}
 }
+
+/* ---------- Doplňky pro React verzi ---------- */
+.top-actions{display:flex;align-items:center;gap:8px}
+.menu-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;content:"";position:relative}
+.menu-btn span::before{position:absolute;top:-6px}
+.menu-btn span::after{position:absolute;top:6px}
+
+/* Mobilní menu (nativní <dialog>) */
+.drawer{margin:0 0 0 auto;height:100dvh;max-height:none;width:min(86vw,360px);border:0;padding:0;background:var(--bg);color:var(--ink);box-shadow:-20px 0 50px -20px rgba(29,51,46,.4)}
+.drawer::backdrop{background:rgba(29,51,46,.45)}
+.drawer-in{display:flex;flex-direction:column;gap:28px;padding:20px 24px;height:100%}
+.drawer-close{align-self:flex-end;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;font-size:28px;line-height:1;cursor:pointer;color:var(--ink)}
+.drawer nav{display:grid;gap:4px}
+.drawer nav a{font-family:var(--display);font-weight:800;font-size:44px;line-height:1.1;text-decoration:none;padding:6px 0}
+.drawer .btn{margin-top:auto;justify-content:center}
+@media (prefers-reduced-motion:no-preference){
+  .drawer[open]{animation:slidein .25s ease}
+  @keyframes slidein{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
+}
+
+/* Projekty */
+.case img.shot{width:100%;height:100%;object-fit:cover}
+.case .more{width:fit-content}
+
+/* Běh – blok o programu Běžím pro stromy */
+.tree{margin-top:32px;border-left:4px solid var(--ochre);padding:4px 0 4px 18px;max-width:560px}
+.tree h3{font-size:30px}
+.tree p{margin-top:6px;color:var(--ink-2)}
+.tree .more{display:inline-block;margin-top:8px;font-weight:700;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* O mně – placeholder u faktů */
+.facts div.todo{border-radius:var(--r-s);padding:10px 8px 8px}
+
+/* Kontakt – kopírování e-mailu */
+.copy{margin-left:8px;min-height:32px;padding:0 12px;border-radius:99px;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;font:500 14px var(--body);cursor:pointer}
+
+@media (min-width:860px){
+  .menu-btn{display:none}
+}
+@media (max-width:859px){
+  .top-cta{display:none}
+}

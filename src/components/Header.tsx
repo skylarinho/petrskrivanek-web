@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import portret from '@/assets/portret-petr.jpeg'
-
-const NAV = [
-  { href: '#sluzby', label: 'Co dělám' },
-  { href: '#projekty', label: 'Projekty' },
-  { href: '#beh', label: 'Běh' },
-  { href: '#o-mne', label: 'O mně' },
-]
+import { useLang } from '@/i18n'
 
 export default function Header() {
+  const { t } = useLang()
   const [scrolled, setScrolled] = useState(false)
+  const menu = useRef<HTMLDialogElement>(null)
+
+  const NAV = [
+    { href: '#sluzby', label: t.nav.services },
+    { href: '#projekty', label: t.nav.projects },
+    { href: '#beh', label: t.nav.run },
+    { href: '#o-mne', label: t.nav.about },
+  ]
 
   useEffect(() => {
     const hero = document.getElementById('hero')
@@ -19,6 +22,8 @@ export default function Header() {
     return () => io.disconnect()
   }, [])
 
+  const closeMenu = () => menu.current?.close()
+
   return (
     <header className={`top${scrolled ? ' scrolled' : ''}`} id="top">
       <div className="wrap">
@@ -26,17 +31,58 @@ export default function Header() {
           <img src={portret} alt="" width={40} height={40} />
           Petr Skřivánek
         </a>
-        <nav className="nav" aria-label="Hlavní">
+        <nav className="nav" aria-label={t.nav.mainLabel}>
           {NAV.map((n) => (
             <a key={n.href} href={n.href}>
               {n.label}
             </a>
           ))}
+          <a href={t.nav.switchTo.href} hrefLang={t.nav.switchTo.label.toLowerCase()}>
+            {t.nav.switchTo.label}
+          </a>
         </nav>
-        <a className="btn btn-primary btn-sm" href="#rezervace">
-          Rezervovat hovor
-        </a>
+        <div className="top-actions">
+          <a className="btn btn-primary btn-sm top-cta" href="#rezervace">
+            {t.nav.book}
+          </a>
+          <button
+            type="button"
+            className="menu-btn"
+            aria-label={t.nav.menu}
+            aria-haspopup="dialog"
+            onClick={() => menu.current?.showModal()}
+          >
+            <span aria-hidden="true" />
+          </button>
+        </div>
       </div>
+
+      {/* Mobilní menu: nativní <dialog> řeší focus trap, Esc i pozadí */}
+      <dialog
+        ref={menu}
+        className="drawer"
+        aria-label={t.nav.menu}
+        onClick={(e) => e.target === menu.current && closeMenu()}
+      >
+        <div className="drawer-in">
+          <button type="button" className="drawer-close" aria-label={t.nav.close} onClick={closeMenu}>
+            ×
+          </button>
+          <nav aria-label={t.nav.mainLabel}>
+            {NAV.map((n) => (
+              <a key={n.href} href={n.href} onClick={closeMenu}>
+                {n.label}
+              </a>
+            ))}
+            <a href={t.nav.switchTo.href} hrefLang={t.nav.switchTo.label.toLowerCase()}>
+              {t.nav.switchTo.label}
+            </a>
+          </nav>
+          <a className="btn btn-primary" href="#rezervace" onClick={closeMenu}>
+            {t.nav.book}
+          </a>
+        </div>
+      </dialog>
     </header>
   )
 }

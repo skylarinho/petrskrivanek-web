@@ -1,33 +1,32 @@
-import { cz } from '@/lib/cz'
-import { services } from '@/content/services'
+import { useLang } from '@/i18n'
 
 export default function Services() {
+  const { t, fmt } = useLang()
+  const s = t.services
+
   return (
     <section className="services" id="sluzby">
       <div className="wrap">
         <div className="sec-head">
-          <h2>Co dělám</h2>
-          <p className="lead">
-            {cz('Čtyři věci, které spolu souvisejí. Kontakty v CRM, e-maily z nich, měření výsledků a AI na rutinu.')}
-          </p>
+          <h2>{s.h2}</h2>
+          <p className="lead">{fmt(s.lead)}</p>
         </div>
         <ol className="stops">
-          {services.map((s) => (
-            <li className="stop" id={s.id} key={s.id}>
+          {s.items.map((it) => (
+            <li className="stop" id={it.id} key={it.id}>
               <span className="dot" aria-hidden="true" />
-              <h3>{cz(s.title)}</h3>
-              <p>{cz(s.text)}</p>
+              <h3>{fmt(it.title)}</h3>
+              <p>{fmt(it.text)}</p>
               <ul className="tools">
-                {s.tools.map((t) => (
-                  <li key={t}>{t}</li>
+                {it.tools.map((tool) => (
+                  <li key={tool}>{tool}</li>
                 ))}
               </ul>
             </li>
           ))}
         </ol>
         <p className="also">
-          <strong>Dál umím:</strong>{' '}
-          {cz('online reklamu včetně Google Ad Grants a Skliku, UX a weby od wireframu po spuštění.')}
+          <strong>{s.alsoLabel}</strong> {fmt(s.also)}
         </p>
       </div>
     </section>
